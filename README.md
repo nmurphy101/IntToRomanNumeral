@@ -37,3 +37,5 @@ On Windows/Linux run:
 On Windows/Linux run:
     
     $ make test
+      or
+    $ pytest
