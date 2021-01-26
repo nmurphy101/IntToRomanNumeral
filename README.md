@@ -6,23 +6,29 @@ Current Options:
 
  # Setup
  If on windows run:
- >make initWin
- >.\venv\Scripts\activate
- >pip install -r ./requirements.txt
+    $ make initWin
+    $ .\venv\Scripts\activate
+    $ pip install -r ./requirements.txt
 
  If on linux run:
- $make initLin
+    $ make initLin
 
  If the make file doesn't work manually run the commands:
-    $python -m venv venv
+    $ python -m venv venv
     
-    $. ./venv/bin/activate  
+    $ . ./venv/bin/activate  
        or  
-    $source venv/bin/activate
+    $ source venv/bin/activate
     
-    $pip install -r requirements.txt
+    $ pip install -r requirements.txt
+
+# Running
+On Windows/Linux run:
+    $ make run
+      or
+    $ python converter.py
 
 
 # Testing
 On Windows/Linux run:
-$make test
+    $ make test
