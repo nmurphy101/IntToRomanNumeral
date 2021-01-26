@@ -7,23 +7,23 @@ Current Options:
  # Setup
  If on windows run:
     
-    $ make initWin
+    $ python3 -m venv venv
     $ .\venv\Scripts\activate
-    $ pip install -r ./requirements.txt
+    $ pip3 install -r ./requirements.txt
 
  If on linux run:
 
-    $ make initLin
+    $ make init
 
  If the make file doesn't work manually run the commands:
     
-    $ python -m venv venv
+    $ python3 -m venv venv
     
     $ . ./venv/bin/activate  
        or  
     $ source venv/bin/activate
     
-    $ pip install -r requirements.txt
+    $ pip3 install -r requirements.txt
 
 # Running
 On Windows/Linux run:

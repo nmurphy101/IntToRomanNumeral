@@ -1,19 +1,17 @@
-initLin:
-	python -m venv venv; \
-	. ./venv/bin/activate; \
-	pip install -r requirements.txt; \
+init: buildenv startenv
 
-initWin:
-	python -m venv venv &
-	# These  v  will have to be run manually on windows
-	# .\venv\Scripts\activate
-	# pip install -r ./requirements.txt
+buildenv:
+	python3 -m venv venv 
+
+startenv:
+	. ./venv/bin/activate; \
+	pip3 install -r requirements.txt; \
 
 test:
 	pytest
 
 run:
-	python converter.py
+	python3 converter.py
 
 clean:
 	rm -rf venv
