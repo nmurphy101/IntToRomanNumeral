@@ -60,11 +60,7 @@ class Roman(Converter):
         of roman numerals, and sets the result.
         """
         # Make sure the user input is an integer between 0 and 4000
-        try:
-            integer = int(self.number)
-        except ValueError:
-            raise ValueError("Enter a valid integer")
-
+        integer = int(self.number)
         if not 1 <= integer <= 3999:
             raise ValueError("Enter a valid integer between 0 and 4000")
 
@@ -106,4 +102,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-    
