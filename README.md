@@ -6,14 +6,17 @@ Current Options:
 
  # Setup
  If on windows run:
+    
     $ make initWin
     $ .\venv\Scripts\activate
     $ pip install -r ./requirements.txt
 
  If on linux run:
+
     $ make initLin
 
  If the make file doesn't work manually run the commands:
+    
     $ python -m venv venv
     
     $ . ./venv/bin/activate  
@@ -24,6 +27,7 @@ Current Options:
 
 # Running
 On Windows/Linux run:
+    
     $ make run
       or
     $ python converter.py
@@ -31,4 +35,5 @@ On Windows/Linux run:
 
 # Testing
 On Windows/Linux run:
+    
     $ make test
