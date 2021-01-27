@@ -64,29 +64,24 @@ class Roman(Converter):
         if not 1 <= integer <= 3999:
             raise ValueError("Enter a valid integer between 0 and 4000")
 
-        # Numbers and their respective symbols
-        num = [1, 4, 5, 9, 10, 40, 50, 90,
-               100, 400, 500, 900, 1000]
-        sym = ["I", "IV", "V", "IX", "X", "XL",
-               "L", "XC", "C", "CD", "D", "CM", "M"]
-        # Initilize the list index and result string
-        i = 12
-        roman_num = ""
-        # Loop so long as integer is not zero
-        while integer:
-            # devide integer by the current 'numbers place'
-            div = integer // num[i]
-            # modulus integer by the current 'numbers place'
-            integer %= num[i]
-            # Loop so long as the division is not zero
-            while div:
-                # Add the roman numeral to the result string
-                roman_num += sym[i]
-                div -= 1
-            # Decend the number/symbol lists
-            i -= 1
-        # Set the final result
-        self.result = roman_num
+        # Symbol with it's respective integer place
+        roman_numeral_table = [
+            ("M", 1000), ("CM", 900), ("D", 500),
+            ("CD", 400), ("C", 100), ("XC", 90),
+            ("L", 50), ("XL", 40), ("X", 10),
+            ("IX", 9), ("V", 5), ("IV", 4),
+            ("I", 1)
+        ]
+        # Initilize the numeral list
+        roman_numerals = []
+        # Loop over the roman numeral table
+        for numeral, value in roman_numeral_table:
+            # Get the quotent and remainder from a %mod calculation
+            count, integer = divmod(integer, value)
+            # Add the resulting numerals to the final result list
+            roman_numerals.append(numeral * count)
+        # Join the final result (which is faster than str concatenation) into a str
+        self.result = ''.join(roman_numerals)
 
 def main():
     '''
