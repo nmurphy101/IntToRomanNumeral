@@ -1,7 +1,7 @@
 init: buildenv startenv
 
 buildenv:
-	python3 -m venv venv 
+	python3 -m venv venv || python -m venv venv
 
 startenv:
 	. ./venv/bin/activate; \
@@ -11,7 +11,7 @@ test:
 	pytest
 
 run:
-	python3 converter.py
+	python3 converter.py || python converter.py
 
 clean:
 	rm -rf venv

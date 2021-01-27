@@ -74,12 +74,14 @@ class Roman(Converter):
         ]
         # Initilize the numeral list
         roman_numerals = []
-        # Loop over the roman numeral table
-        for numeral, value in roman_numeral_table:
-            # Get the quotent and remainder from a %mod calculation
-            count, integer = divmod(integer, value)
-            # Add the resulting numerals to the final result list
-            roman_numerals.append(numeral * count)
+        # Exit when integer reaches 0
+        while integer:
+            # Loop over the roman numeral table
+            for numeral, value in roman_numeral_table:
+                # Get the quotent and remainder from a %mod calculation
+                count, integer = divmod(integer, value)
+                # Add the resulting numerals to the final result list
+                roman_numerals.append(numeral * count)
         # Join the final result (which is faster than str concatenation) into a str
         self.result = ''.join(roman_numerals)
 
