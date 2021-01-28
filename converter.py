@@ -108,14 +108,15 @@ class Roman(Converter):
         integer, and sets the result.
         """
 
-        # Make sure the user input is a roman numeral between I and MMMCMXCIX
-        usr_str = str(self.value)
-        if not 1 <= len(usr_str) <= 9:
-            raise ValueError("Enter a valid roman numeral between I and MMMCMXCIX")
+        # Make sure the user input is a roman numeral string
+        usr_str = str(self.value).upper()
+        if not any(i in "IVXLCDM" for i in usr_str):
+            raise TypeError("Only enter valid roman numeral characters")
         
         # Internal result int to replace class result var
         result = 0
-        # 
+        
+        # Flag for if a double roman numeral is found
         double_found = False
 
         # Loop through each character in usr_str
@@ -148,6 +149,10 @@ class Roman(Converter):
 
             # Add the found value to the final result
             result += holding_val
+        
+        # Check to make sure it's only a roman numeral between I and MMMCMXCIX
+        if result >= 4000:
+            raise ValueError("Enter a valid roman numeral between I and MMMCMXCIX")
 
         # Set the class var result to be the deconvert result MMMCMXCIX
         self.result = result
@@ -164,7 +169,12 @@ if __name__ == "__main__":
     converter.convert()
     print("Convert is: ", converter.result)
 
-    # Deconvert back 
-    converter.value = converter.result
+    # Get user input with a prompt
+    value = input("Please input a roman numeral between I and MMMCMXCIX: ")
+
+    # Set the converter's value to the input
+    converter.value = value
+
+    # Deconvert the input
     converter.deconvert()
     print("Deconvert is: ", converter.result)
