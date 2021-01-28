@@ -8,7 +8,7 @@
     of potential options.
 
     Current Options:
-     - Integer to Roman Numeral
+     - Integer to Roman Numeral & Roman Numeral to Integer
 
     :copyright: (c) 2021 by Nicholas Murphy.
     :license: GPLv2, see LICENSE for more details.
